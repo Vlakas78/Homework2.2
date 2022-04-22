@@ -6,17 +6,17 @@ object WallService {
 
 
     fun add(post: Post): Post {
-        post.id = postId
-        posts += post
+        val postToAdd = post.copy(id = postId)
+        posts += postToAdd
         postId++
         return posts.last()
 
-    }
+          }
 
     fun update(post: Post): Boolean {
         for ((index, postOrigin) in posts.withIndex()) {
             if (post.id == postOrigin.id) {
-                this.posts[index] = post.copy(id = postOrigin.id, date = postOrigin.date)
+                posts[index] = post.copy(ownedId = posts[index].ownedId, date = posts[index].date)
                 return true
             }
         }
