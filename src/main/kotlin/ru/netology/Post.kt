@@ -1,5 +1,7 @@
 package ru.netology
 
+import ru.netology.Attachments.Attachment
+
 data class Post(
     val id: Int,
     val ownedId: Int,
@@ -10,6 +12,12 @@ data class Post(
     val replyOwnerId: Int,
     val replyPostId: Int,
     val friendsOnly: String,
+    val comments: Comments?,
+    val copyright: Copyright?,
+    val likes: Likes?,
+    val reposts: Reposts?,
+    val view: View?,
+    val donut: Donut?,
     val postType: String,
     val singerId: Int,
     val canPin: Boolean,
@@ -18,14 +26,15 @@ data class Post(
     val markedAsAds: Boolean,
     val isFavorite: Boolean,
     val postponedId: Int
-//    val comments: String,
-//    val copyright: String,
-//    val likes: Int,
-//    val reposts: Int,
-//    val view: Int,
-//    val donut: Int,
-)
 
+) {
+    private var attachments = emptyArray<Attachment>()
+
+    fun addAttachments(attachment: Attachment): Boolean {
+        attachments += attachment
+        return true
+    }
+}
 
 
 
