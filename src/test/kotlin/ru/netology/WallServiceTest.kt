@@ -126,27 +126,26 @@ class WallServiceTest {
         assertTrue(post1.addAttachments(attachment))
     }
 
-//    @Test(expected = PostNotFoundException::class)
-//    fun shouldThrow() {
-//        val comment = Comments(1, true, 1, true, true)
-//        val copyright = Copyright(1," ", " ", " ")
-//        val likes = Likes(1,true, true, true)
-//        val reposts = Reposts(1,true)
-//        val view = View(1)
-//        val donut = Donut(true,1," ", true, " ")
-//
-//
-//        WallService.add(
-//            Post(2, 1,1, 1,1648448270,
-//        "text1", 1,1, "friendsOnly1", comment, copyright, likes,
-//        reposts, view,donut," ",1, true, true, 1, true,true,1)
-//        )
-//
-//        WallService.createComment(Comment(1, 1, 1, "1", "1", 1, 1, 1, 1, 1,1))
-//
-//
-//
-//    }
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val comment = Comments(1, true, 1, true, true)
+        val copyright = Copyright(1," ", " ", " ")
+        val likes = Likes(1,true, true, true)
+        val reposts = Reposts(1,true)
+        val view = View(1)
+        val donut = Donut(true,1," ", true, " ")
+
+
+        WallService.add(
+            Post(1, 1,1, 1,1648448270,
+        "text1", 1,1, "friendsOnly1", comment, copyright, likes,
+        reposts, view,donut," ",1, true, true, 1, true,true,1)
+        )
+
+        WallService.createComment(Comment(1, 1, 1, "1", "1", 1, 1, 1, 1, 1,1))
+  }
+
+
     }
 
 

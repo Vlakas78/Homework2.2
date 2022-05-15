@@ -31,13 +31,13 @@ fun main() {
 
     val comment1 = Comment(
         1, 1, 1, "1", "1", 1, 1, 1, 1, 1,1)
-//    val comment2 = Comment(
-//        2, 2, 1, "2", "1", 2, 2, 2,2, 2,2)
+   val comment2 = Comment(
+       2, 2, 1, "2", "1", 2, 2, 2,2, 2,2)
 
 
     WallService.add(post1)
 //    println(service.update(post1))
     WallService.createComment(comment1)
-//    service.createComment(comment2)
+    WallService.createComment(comment2)
 
 }

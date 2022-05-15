@@ -1,6 +1,4 @@
 package ru.netology
 
-class PostNotFoundException() : RuntimeException() {
-
-}
+class PostNotFoundException : RuntimeException()
 

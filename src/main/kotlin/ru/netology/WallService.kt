@@ -26,15 +26,12 @@ object WallService {
     }
 
     fun createComment(comment: Comment) {
-        var count = comments.size
         for (post in posts) {
             if (comment.id == post.id) {
                 comments += comment
-            }
-        }
-           if (comments.size == count) {
-           throw PostNotFoundException()
+            } else throw PostNotFoundException()
+
       }
   }
-  }
+    }
 
