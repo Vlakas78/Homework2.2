@@ -1,12 +1,11 @@
 package ru.netology
 
-import ru.netology.Attachments.Audio
-import ru.netology.Attachments.AudioAttachment
-import ru.netology.Attachments.Video
-import ru.netology.Attachments.VideoAttachment
+import ru.netology.Attachments.*
 
 
 fun main() {
+
+
     val comment = Comments(1, true, 1, true, true)
     val copyright = Copyright(1," ", " ", " ")
     val likes = Likes(1,true, true, true)
@@ -16,9 +15,9 @@ fun main() {
 
     var post1 = Post(1, 1,1, 1,1648448270,
         "text1", 1,1, "friendsOnly1", comment, copyright, likes,
-        reposts, view,donut," ",1, true, true, 1, true,true,1)
+        reposts, view, donut," ",1, true, true, 1, true,true,1)
 
-    val audio = Audio(1, 1, "Иванов", "АПП", 10, "www.song.ru/1")
+        val audio = Audio(1, 1, "Иванов", "АПП", 10, "www.song.ru/1")
     val attachmentAudio = AudioAttachment(audio)
 
     post1.addAttachments(attachmentAudio)
@@ -30,7 +29,15 @@ fun main() {
     val attachmentVideo = VideoAttachment(video)
     post1.addAttachments(attachmentVideo)
 
+    val comment1 = Comment(
+        1, 1, 1, "1", "1", 1, 1, 1, 1, 1,1)
+//    val comment2 = Comment(
+//        2, 2, 1, "2", "1", 2, 2, 2,2, 2,2)
+
+
     WallService.add(post1)
-    println(WallService.update(post1))
+//    println(service.update(post1))
+    WallService.createComment(comment1)
+//    service.createComment(comment2)
 
 }

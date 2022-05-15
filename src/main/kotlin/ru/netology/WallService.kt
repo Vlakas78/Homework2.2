@@ -1,8 +1,10 @@
 package ru.netology
 
+
 object WallService {
     private var posts = emptyArray<Post>()
     private var postId = 1
+    private var comments = emptyArray<Comment>()
 
 
     fun add(post: Post): Post {
@@ -22,4 +24,17 @@ object WallService {
         }
         return false
     }
-}
+
+    fun createComment(comment: Comment) {
+        var count = comments.size
+        for (post in posts) {
+            if (comment.id == post.id) {
+                comments += comment
+            }
+        }
+           if (comments.size == count) {
+           throw PostNotFoundException()
+      }
+  }
+  }
+
